@@ -11,10 +11,11 @@ h1 {
  img {  
   max-width: 50%;  
   height: auto;  
+  align-content: center;
   } 
 
-  .div-one{
-
-    align-content: center;
+  .card {
+    background-color: #2fcc5b;
+    width: 200px;
+    height: 400px;
   }
-

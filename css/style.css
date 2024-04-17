@@ -5,7 +5,7 @@
 .blue{
    background-color: #060636 !important;
 }
-
+/* important is used here to keep the color of the button*/
 h1 {
   text-align: center;
 }
@@ -65,6 +65,16 @@ h1 {
    margin-bottom: 10px;
   }
 
+  .stack{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .alert{
+    background-color: red;
+  }
+/* Above, is the end of our personal css sheet*/
 
   @media(min-width: 640px){
 
@@ -90,7 +100,7 @@ h1 {
 
   }
 
-
+/* Above, we added media queries to help with the flex direction of some elements.
 
 
  

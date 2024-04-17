@@ -90,7 +90,7 @@
   <!-- We used foundation flex design to build a responisive design. -->
 
   <main class="topMain">
-    <form action="" class="" name="sportSubmisson">
+    <form action="#" class="" name="sportSubmisson" id="submitBtn">
 
       <div class="row small-12 medium-12 large-12 align-center align ">
 
@@ -108,10 +108,10 @@
       </div>
 
       <div class="row small-12 medium-12 large-12 align-center align top">
-        <label class=" font bottom  column small-12" for="sportSubmisson" id="sportSubmisson"> Please Pick A Display
+        <label class=" font bottom  column small-12" for="mediumSubmission"> Please Pick A Display
           Type:</label>
 
-        <select class=" align column small-7 medium-5 large-3" name="medium" id="medium">
+        <select class=" align column small-7 medium-5 large-3" name="medium" id="mediumSubmission">
           <option value="">&#128585;</option>
           <option value="Book">Book</option>
           <option value="Video">Video</option>
@@ -119,9 +119,10 @@
         </select>
       </div>
 
-      <div class="row small-12 medium-12 large-12 align-center top">
+      <div class="row small-12 medium-12 large-12 align-center top stack" id="alert">
 
-        <a class=" blue button success" href="results.html">Submit</a>
+        <button type="submit" class=" blue button success" id="submitBtn">Submit</button>
+        <!--<h2 class="alert">Please Use A Valid Entry! </h2>-->
 
 
       </div>

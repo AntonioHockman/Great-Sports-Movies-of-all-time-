@@ -86,7 +86,9 @@ form {
 
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 
 }
 
@@ -121,7 +123,14 @@ img:hover {
 a{
     width: 300px;
 }
+
+
+.alert{
+    background-color: red;
+}
 /* Above, is the custom css for the page*/
+
+
 
 
 
@@ -141,6 +150,14 @@ a{
     .right {
         margin-right: 25px;
     }
+
+    .red{
+        flex-direction: row;
+        text-align: center;
+    }
 }
+
+
+
 
 /* Above, I added media queries for certain height and margins.

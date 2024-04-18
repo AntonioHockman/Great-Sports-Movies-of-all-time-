@@ -22,8 +22,8 @@ function handleSearch(event) {
 
     setTimeout(() => {
       alert1.removeChild(h2);
-    }, 3000);
-    // Above, we created a function to handle the form if the submission areas are blank to alert the user for 3 seconds.
+    }, 2000);
+    // Above, we created a function to handle the form if the submission areas are blank to alert the user for 2 seconds.
   } else {
     let sportsSubmissionValue = sportsSubmission.value;
     let mediumSubmissionValue = mediumSubmission.value;

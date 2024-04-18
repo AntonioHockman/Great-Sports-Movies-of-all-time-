@@ -130,7 +130,41 @@ a{
 }
 /* Above, is the custom css for the page*/
 
+.pink{
 
+    margin: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: tan;
+    border: 1px solid black;
+    
+    
+    
+}
+
+
+
+.cardHeader{
+    border: 1px solid black;
+    
+    text-align: center;
+    color: white;
+    background-color: #060636;
+    font-size: 15px;
+    font-weight: bolder;
+    
+    
+    
+}
+
+.cardBody{
+    
+    height: 350px;
+    
+    
+
+}
 
 
 

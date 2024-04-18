@@ -20,7 +20,7 @@ function ValidateMediumRequest() {
   if (medium === "Video") {
     ValidateSportRequest(sport);
   } else {
-  }
+   ValidateBookRequest(sport)}
 }
 // Above, is a function to validate the type of medium selected.
 function ValidateSportRequest(sport) {
@@ -230,6 +230,236 @@ function getBasketBallAPI(sport) {
 }
 // Above, fetches basketball api and renders items to screen.
 
+function ValidateBookRequest(sport){
+
+    if (sport === "Football") {
+        footballBookAPI(sport);
+      } else if (sport === "Boxing") {
+        boxingBookAPI(sport);
+      } else if (sport === "Baseball") {
+        baseBallBookAPI(sport);
+      } else {
+        basketBallBookAPI(sport);
+      }
+
+
+
+
+};
+
+// Above, we validate the book request and identify which sport to use. 
+function footballBookAPI(sport){
+
+    let url = `https://www.loc.gov/search/?q=${sport}&fo=json`;
+
+    fetch(url).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+          if (data.length === 0) {
+            alert("Error data Not Found!");
+          } else {
+            console.log(data)
+            let results = Math.min(data.results.length, 6)
+            console.log(results)
+
+            for ( i=0; i < Math.min(data.results.length, 6); i++){
+                let wholeCard = document.createElement("div");
+                wholeCard.classList.add("card","pink", "small-12" ,"medium-12", "large-12" ,"card2");
+                wholeCard.setAttribute("style", "width: 300px;");
+
+                let cardHeader = document.createElement("div");
+                cardHeader.classList.add("card-divider", "cardHeader", "small-12");
+                cardHeader.textContent = data.results[i].title;
+
+
+                let cardBody= document.createElement("div");
+                cardBody.classList.add("card-section", "cardBody")
+                cardBody.textContent = data.results[i].description;
+                
+                displayArea.append(wholeCard);
+                wholeCard.append(cardHeader);
+                wholeCard.append(cardBody);
+
+
+
+
+
+
+            }
+          }
+        });
+      }
+    })
+
+
+    .catch(function (error) {
+        alert("Unable to connect to server!");
+      });
+
+
+}
+
+// Above, is a function that calls API for books concerning football.
+
+function boxingBookAPI(sport){
+
+    let url = `https://www.loc.gov/search/books/?q=${sport}&fo=json`;
+
+    fetch(url).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+          if (data.length === 0) {
+            alert("Error data Not Found!");
+          } else {
+            console.log(data)
+            let results = Math.min(data.results.length, 6)
+            console.log(results)
+
+            for ( i=0; i < Math.min(data.results.length, 6); i++){
+                let wholeCard = document.createElement("div");
+                wholeCard.classList.add("card","pink", "small-12" ,"medium-12", "large-12" ,"card2");
+                wholeCard.setAttribute("style", "width: 300px;");
+
+                let cardHeader = document.createElement("div");
+                cardHeader.classList.add("card-divider", "cardHeader", "small-12");
+                cardHeader.textContent = data.results[i].title;
+
+
+                let cardBody= document.createElement("div");
+                cardBody.classList.add("card-section", "cardBody")
+                cardBody.textContent = data.results[i].description;
+                
+                displayArea.append(wholeCard);
+                wholeCard.append(cardHeader);
+                wholeCard.append(cardBody);
+
+
+
+
+
+
+            }
+          }
+        });
+      }
+    })
+
+
+    .catch(function (error) {
+        alert("Unable to connect to server!");
+      });
+
+
+
+};
+// Above, is a function that calls API for books concerning boxing.
+
+function baseBallBookAPI(sport){
+    let url = `https://www.loc.gov/search/?q=${sport}&fo=json`;
+
+    fetch(url).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+          if (data.length === 0) {
+            alert("Error data Not Found!");
+          } else {
+            console.log(data)
+            let results = Math.min(data.results.length, 6)
+            console.log(results)
+
+            for ( i=0; i < Math.min(data.results.length, 6); i++){
+                let wholeCard = document.createElement("div");
+                wholeCard.classList.add("card","pink", "small-12" ,"medium-12", "large-12" ,"card2");
+                wholeCard.setAttribute("style", "width: 300px;");
+
+                let cardHeader = document.createElement("div");
+                cardHeader.classList.add("card-divider", "cardHeader", "small-12");
+                cardHeader.textContent = data.results[i].title;
+
+
+                let cardBody= document.createElement("div");
+                cardBody.classList.add("card-section", "cardBody")
+                cardBody.textContent = data.results[i].description;
+                
+                displayArea.append(wholeCard);
+                wholeCard.append(cardHeader);
+                wholeCard.append(cardBody);
+
+
+
+
+
+
+            }
+          }
+        });
+      }
+    })
+
+
+    .catch(function (error) {
+        alert("Unable to connect to server!");
+      });
+
+
+};
+// Above, is a function that calls API for books concerning baseball.
+
+function basketBallBookAPI(sport){
+    let url = `https://www.loc.gov/search/?q=${sport}&fo=json`;
+
+    fetch(url).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+          if (data.length === 0) {
+            alert("Error data Not Found!");
+          } else {
+            console.log(data)
+            let results = Math.min(data.results.length, 6)
+            console.log(results)
+
+            for ( i=0; i < Math.min(data.results.length, 6); i++){
+                let wholeCard = document.createElement("div");
+                wholeCard.classList.add("card","pink", "small-12" ,"medium-12", "large-12" ,"card2");
+                wholeCard.setAttribute("style", "width: 300px;");
+
+                let cardHeader = document.createElement("div");
+                cardHeader.classList.add("card-divider", "cardHeader", "small-12");
+                cardHeader.textContent = data.results[i].title;
+
+
+                let cardBody= document.createElement("div");
+                cardBody.classList.add("card-section", "cardBody")
+                cardBody.textContent = data.results[i].description;
+                
+                displayArea.append(wholeCard);
+                wholeCard.append(cardHeader);
+                wholeCard.append(cardBody);
+
+
+
+
+
+
+            }
+          }
+        });
+      }
+    })
+
+
+    .catch(function (error) {
+        alert("Unable to connect to server!");
+      });
+
+};
+
+// Above, is a function that calls API for books concerning basketBall.
+
+
+
+
+
 function nextSubmisson(event) {
   event.preventDefault();
   displayArea.innerHTML = "";
@@ -249,6 +479,8 @@ function nextSubmisson(event) {
     medium = mediumSubmission2.value;
 
     document.location.search = `sport=${sport}&medium=${medium}`;
+    sportSubmisson2.value='';
+    mediumSubmission2.value='';
   }
 }
 // Above, is the function that will run once a second submission is made.
